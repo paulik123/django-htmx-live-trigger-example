@@ -9,12 +9,13 @@ constantly==23.10.4
 cryptography==42.0.5
 daphne==4.1.2
 Django==5.0.4
-django-htmx-live-trigger @ file:///Users/paulik123/Documents/magarii/live/django-htmx-live-trigger/dist/django-htmx-live-trigger-0.1.tar.gz#sha256=e9cc7d27324bc3b0357975d65b1a8d41e47931b6edfeb1f4506abe29b526c998
+django-htmx-live-trigger==0.1
 django-redis==5.4.0
 django-template-partials==24.2
 hyperlink==21.0.0
 idna==3.7
 incremental==22.10.0
+install==1.3.5
 msgpack==1.0.8
 pyasn1==0.6.0
 pyasn1_modules==0.4.0
