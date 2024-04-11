@@ -1,0 +1,41 @@
+{% load static %}
+{% load partials %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>django_htmx_live_trigger example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tiny.css@0/dist/tiny.css">
+</head>
+<body hx-ext="ws-events" ws-events-connect="/ws/events/all/">
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Datetime</th>
+            </tr>
+        </thead>
+        <tbody hx-get="{% url 'index' %}" hx-trigger="new-notification from:body">
+            {% partialdef notifications inline=True %}
+                {% for notification in notifications %}
+                    <tr>
+                        <td>{{notification.description}}</td>
+                        <td>{{notification.created_at|date:"d-m-Y H:i:s"}}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            No notifications yet
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endpartialdef %}
+        </tbody>
+    </table>
+
+    <script src="https://unpkg.com/htmx.org@1.9.11/dist/htmx.min.js"></script>
+    <script src="{% static 'django_htmx_live_trigger/js/htmx-ws-events.js' %}"></script>
+</body>
+</html>
