@@ -12,9 +12,6 @@ Django==5.0.4
 django-htmx-live-trigger==0.1
 django-redis==5.4.0
 django-template-partials==24.2
-hyperlink==21.0.0
-idna==3.7
-incremental==22.10.0
 install==1.3.5
 msgpack==1.0.8
 pyasn1==0.6.0
